@@ -1,213 +1,370 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-export default function Portfolio() {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  const projects = [
-    {
-      title: "Java Data Structures",
-      description:
-        "Implemented Stack, Queue, and LinkedList from scratch to understand internal behavior of core data structures and algorithm efficiency.",
-      tech: "Java • Data Structures • Algorithms",
-      github: "https://github.com/venma402/java-data-structures"
-    },
-    {
-      title: "Parking Lot Management System",
-      description:
-        "Object-oriented parking lot simulation handling vehicle entry, exit, slot allocation, and parking availability tracking.",
-      tech: "Java • OOP • System Design",
-      github: "https://github.com/venma402/parking-lot-system"
-    },
-    {
-      title: "Library Management System",
-      description:
-        "System to manage books, members, issue/return operations, and track book availability in a library.",
-      tech: "Java • OOP",
-      github: "https://github.com/venma402/library-management-system"
-    }
-  ];
+<title>Venma Pehan | Portfolio</title>
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-600 p-8 text-white">
+<style>
 
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7 }}
-        className="max-w-5xl mx-auto"
-      >
-
-        {/* HEADER */}
-
-        <h1 className="text-5xl font-bold mb-2">VENMA PEHAN</h1>
-
-        <p className="text-lg mb-6">
-          Aspiring Software Developer | Java Backend | Data Structures & Algorithms
-        </p>
-
-        <div className="flex flex-wrap gap-4 mb-10">
-
-          <Button variant="secondary" className="flex gap-2">
-            <Mail size={16}/> venmapehan@gmail.com
-          </Button>
-
-          <Button
-            variant="secondary"
-            className="flex gap-2"
-            onClick={() => window.open("https://linkedin.com")}
-          >
-            <Linkedin size={16}/> LinkedIn
-          </Button>
-
-          <Button
-            variant="secondary"
-            className="flex gap-2"
-            onClick={() => window.open("https://github.com/venma402")}
-          >
-            <Github size={16}/> GitHub
-          </Button>
-
-          <Button
-            variant="secondary"
-            className="flex gap-2"
-            onClick={() => window.open("/resume.pdf")}
-          >
-            <Download size={16}/> Resume
-          </Button>
-
-        </div>
-
-        {/* ABOUT */}
-
-        <section className="mb-12">
-          <h2 className="text-3xl font-semibold mb-4">About</h2>
-
-          <p className="text-lg leading-relaxed">
-            Passionate software developer focused on backend development with Java.
-            Strong interest in data structures, algorithms, and system design.
-            Currently building practical backend systems while strengthening
-            computer science fundamentals.
-          </p>
-        </section>
-
-        {/* HIGHLIGHTS */}
-
-        <section className="mb-12">
-
-          <h2 className="text-3xl font-semibold mb-4">Highlights</h2>
-
-          <div className="grid grid-cols-3 gap-6 text-center">
-
-            <div className="bg-white text-black p-6 rounded-xl shadow">
-              <h3 className="text-2xl font-bold">3+</h3>
-              <p>Projects Built</p>
-            </div>
-
-            <div className="bg-white text-black p-6 rounded-xl shadow">
-              <h3 className="text-2xl font-bold">Java</h3>
-              <p>Primary Language</p>
-            </div>
-
-            <div className="bg-white text-black p-6 rounded-xl shadow">
-              <h3 className="text-2xl font-bold">DSA</h3>
-              <p>Strong Foundation</p>
-            </div>
-
-          </div>
-
-        </section>
-
-        {/* PROJECTS */}
-
-        <section className="mb-12">
-
-          <h2 className="text-3xl font-semibold mb-6">Projects</h2>
-
-          <div className="grid md:grid-cols-2 gap-6">
-
-            {projects.map((p, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 200 }}
-              >
-
-                <Card className="rounded-2xl shadow-xl">
-
-                  <CardContent className="p-6 text-black">
-
-                    <h3 className="text-xl font-bold mb-2">{p.title}</h3>
-
-                    <p className="mb-3">{p.description}</p>
-
-                    <p className="text-sm font-semibold mb-4">
-                      Tech: {p.tech}
-                    </p>
-
-                    <Button
-                      className="flex gap-2"
-                      onClick={() => window.open(p.github)}
-                    >
-                      <Github size={16}/> View Code
-                    </Button>
-
-                  </CardContent>
-
-                </Card>
-
-              </motion.div>
-            ))}
-
-          </div>
-
-        </section>
-
-        {/* SKILLS */}
-
-        <section className="mb-12">
-
-          <h2 className="text-3xl font-semibold mb-4">Skills</h2>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-
-            <div className="bg-white text-black p-4 rounded-lg">Java</div>
-            <div className="bg-white text-black p-4 rounded-lg">Data Structures</div>
-            <div className="bg-white text-black p-4 rounded-lg">Algorithms</div>
-            <div className="bg-white text-black p-4 rounded-lg">Object-Oriented Programming</div>
-            <div className="bg-white text-black p-4 rounded-lg">Spring Boot</div>
-            <div className="bg-white text-black p-4 rounded-lg">REST APIs</div>
-            <div className="bg-white text-black p-4 rounded-lg">MySQL</div>
-            <div className="bg-white text-black p-4 rounded-lg">Git</div>
-            <div className="bg-white text-black p-4 rounded-lg">Linux</div>
-
-          </div>
-
-        </section>
-
-        {/* EDUCATION */}
-
-        <section>
-
-          <h2 className="text-3xl font-semibold mb-4">Education</h2>
-
-          <p className="text-lg">
-            B.Tech – Textile Technology  
-            Bannari Amman Institute of Technology
-          </p>
-
-        </section>
-
-        {/* FOOTER */}
-
-        <footer className="mt-20 text-center text-sm opacity-80">
-          <p>© 2026 Venma Pehan</p>
-          <p>Built with React • Tailwind • Framer Motion</p>
-        </footer>
-
-      </motion.div>
-
-    </div>
-  );
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+scroll-behavior:smooth;
 }
+
+body{
+background:#f8f9fa;
+color:#333;
+}
+
+/* HERO */
+
+.hero{
+
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+background:linear-gradient(
+135deg,
+#f9c5d1,
+#fcd5ce,
+#d8f3dc,
+#b7e4c7
+);
+
+background-size:300% 300%;
+animation:gradientFlow 12s ease infinite;
+
+padding:20px;
+
+border-bottom-left-radius:40px;
+border-bottom-right-radius:40px;
+
+}
+
+@keyframes gradientFlow{
+
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+
+}
+
+.hero h1{
+font-size:58px;
+margin-bottom:15px;
+animation:float 4s ease-in-out infinite;
+}
+
+.hero span{
+color:#ff7aa2;
+}
+
+.hero p{
+font-size:22px;
+margin-bottom:35px;
+}
+
+@keyframes float{
+
+0%{transform:translateY(0px);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0px);}
+
+}
+
+/* BUTTONS */
+
+.btn{
+
+padding:12px 26px;
+border-radius:30px;
+border:none;
+
+background:white;
+color:#444;
+
+font-weight:600;
+text-decoration:none;
+
+margin:8px;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
+
+transition:all 0.3s ease;
+
+}
+
+.btn:hover{
+
+transform:translateY(-4px);
+box-shadow:0 10px 25px rgba(0,0,0,0.2);
+
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 10%;
+}
+
+.title{
+text-align:center;
+font-size:36px;
+margin-bottom:40px;
+}
+
+/* CARDS */
+
+.card{
+
+background:white;
+
+padding:25px;
+
+border-radius:16px;
+
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
+
+transition:all 0.3s ease;
+
+margin-bottom:20px;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+box-shadow:0 15px 35px rgba(0,0,0,0.15);
+
+}
+
+/* PROJECT GRID */
+
+.projects{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+gap:25px;
+
+}
+
+/* SKILLS */
+
+.skills{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:12px;
+
+justify-content:center;
+
+}
+
+.skill{
+
+background:#e9f5ec;
+
+padding:10px 18px;
+
+border-radius:20px;
+
+}
+
+/* CONTACT */
+
+.contact{
+
+text-align:center;
+
+}
+
+.contact a{
+
+color:#ff7aa2;
+
+text-decoration:none;
+
+display:block;
+
+margin-top:8px;
+
+}
+
+/* FOOTER */
+
+footer{
+
+text-align:center;
+
+padding:20px;
+
+background:#f1f3f5;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HERO -->
+
+<div class="hero">
+
+<h1>Hi, I'm <span>Venma Pehan</span></h1>
+
+<p>Aspiring Software Developer | Java Backend Developer</p>
+
+<div>
+
+<a href="#projects" class="btn">View Projects</a>
+
+<a href="resume.pdf" class="btn" target="_blank">See Resume</a>
+
+<a href="resume.pdf" class="btn" download>Download Resume</a>
+
+</div>
+
+</div>
+
+<!-- ABOUT -->
+
+<section>
+
+<h2 class="title">About Me</h2>
+
+<div class="card">
+
+<p>
+
+Aspiring Software Developer focused on Java backend development and strong
+problem-solving using Data Structures and Algorithms. Currently building
+hands-on projects including backend systems and algorithm implementations
+to strengthen practical software engineering skills.
+
+</p>
+
+</div>
+
+</section>
+
+<!-- EDUCATION -->
+
+<section>
+
+<h2 class="title">Education</h2>
+
+<div class="card">
+
+<h3>B.Tech – Textile Technology</h3>
+
+<p>Bannari Amman Institute of Technology</p>
+
+<p>2021 – 2025</p>
+
+<p>CGPA: 8.68</p>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="title">Projects</h2>
+
+<div class="projects">
+
+<div class="card">
+
+<h3>Java Data Structures</h3>
+
+<p>Stack, Queue and LinkedList implementations built from scratch.</p>
+
+<a href="https://github.com/venma402/java-data-structures">View Code</a>
+
+</div>
+
+<div class="card">
+
+<h3>Parking Lot Management System</h3>
+
+<p>Parking lot system with vehicle entry, exit and slot allocation.</p>
+
+<a href="https://github.com/venma402/parking-lot-system">View Code</a>
+
+</div>
+
+<div class="card">
+
+<h3>Library Management System</h3>
+
+<p>Manage books, members and borrowing records.</p>
+
+<a href="https://github.com/venma402/library-management-system">View Code</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SKILLS -->
+
+<section>
+
+<h2 class="title">Skills</h2>
+
+<div class="skills">
+
+<div class="skill">Java</div>
+<div class="skill">Data Structures</div>
+<div class="skill">Algorithms</div>
+<div class="skill">OOP</div>
+<div class="skill">Spring Boot</div>
+<div class="skill">REST APIs</div>
+<div class="skill">MySQL</div>
+<div class="skill">Git</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact">
+
+<h2 class="title">Contact</h2>
+
+<p>Email: venmapehan@gmail.com</p>
+
+<p>Phone: 7806912967</p>
+
+<a href="https://github.com/venma402">GitHub</a>
+
+</section>
+
+<footer>
+
+<p>© 2026 Venma Pehan</p>
+
+</footer>
+
+</body>
+</html>
